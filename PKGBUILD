@@ -1,5 +1,5 @@
 pkgname=smartgit
-pkgver=7.1.0
+pkgver=7.1.1
 pkgrel=1
 pkgdesc="Git client with Hg and SVN support."
 arch=("x86_64")
@@ -14,7 +14,7 @@ _pkgfolder=${pkgname}
 source=(https://www.syntevo.com/downloads/${pkgname}/${pkgname}-linux-${_pkgver}.tar.gz
         smartgit.desktop)
 install="smartgit.install"
-md5sums=('047243c92c44f80b79e4444f4f141156'
+md5sums=('5a2c9e7f3c37f5ccdea5c2b107e92702'
          'c372fb0864ce6010c92f75910acbe8d0')
 
 package() {
