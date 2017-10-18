@@ -1,5 +1,5 @@
 pkgname=smartgit
-pkgver=8.0.1
+pkgver=17.1.0
 pkgrel=1
 pkgdesc="Git client with Hg and SVN support."
 arch=("x86_64")
@@ -11,10 +11,10 @@ optdepends=("mercurial" "subversion")
 _pkgver=${pkgver//\./_}
 # folder within tar.gz archive
 _pkgfolder=${pkgname}
-source=(https://www.syntevo.com/downloads/${pkgname}/${pkgname}-linux-${_pkgver}.tar.gz
+source=(http://www.syntevo.com/static/smart/download/${pkgname}/${pkgname}-linux-${_pkgver}.tar.gz
         smartgit.desktop)
 install="smartgit.install"
-md5sums=('ce26b22317fb5659ac5a6a2cea9c88b2'
+md5sums=('8f908197c98067eb45d0fbe1ac216473'
          'c372fb0864ce6010c92f75910acbe8d0')
 
 
