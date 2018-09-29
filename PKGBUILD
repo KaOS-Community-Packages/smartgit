@@ -1,5 +1,5 @@
 pkgname=smartgit
-pkgver=17.1.0
+pkgver=18.1.5
 pkgrel=1
 pkgdesc="Git client with Hg and SVN support."
 arch=("x86_64")
@@ -9,21 +9,15 @@ depends=("java-runtime" "desktop-file-utils" "git" "gtk2")
 optdepends=("mercurial" "subversion")
 # package version as it appears in the name of tar.gz archive file
 _pkgver=${pkgver//\./_}
-# folder within tar.gz archive
-_pkgfolder=${pkgname}
-source=(http://www.syntevo.com/static/smart/download/${pkgname}/${pkgname}-linux-${_pkgver}.tar.gz
+source=(https://www.syntevo.com/downloads/${pkgname}/${pkgname}-linux-${_pkgver}.tar.gz
         smartgit.desktop)
 install="smartgit.install"
-md5sums=('8f908197c98067eb45d0fbe1ac216473'
-         'c372fb0864ce6010c92f75910acbe8d0')
-
+md5sums=('2d817ab3b9faf6305c5f2f09fc42092f'
+         'db7de01424b290a41db6e010be11b45c')
 
 package() {
-    cd "$srcdir"
-
-    #install -D -m644 "${_pkgfolder}"/licenses/* "${pkgdir}/usr/share/licenses/${pkgname}"
     mkdir -p "${pkgdir}"/opt
-    mv "${_pkgfolder}" ${pkgdir}/opt/${pkgname} || return 1
+    mv "${pkgname}" ${pkgdir}/opt/${pkgname} || return 1
 
     install -D -m644 smartgit.desktop "${pkgdir}"/usr/share/applications/${pkgname}.desktop
 
